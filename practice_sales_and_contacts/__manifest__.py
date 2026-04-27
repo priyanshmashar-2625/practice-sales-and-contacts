@@ -7,7 +7,10 @@ Odoo Sale Order and Contacts Practice.
 """,
     'depends': ['base','sale_management','account','contacts'],
     'data':[
-        "views/res_partner_views.xml"
+        "views/res_partner_views.xml",
+        "data/contact_sequence.xml",
+        "views/product_template_views.xml",
+        "views/sale_order_views.xml"
     ],
     'installable': True,
     'application': True,

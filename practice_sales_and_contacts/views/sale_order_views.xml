@@ -11,5 +11,27 @@
                 </xpath>
             </field>
         </record>
+
+        <record id="sale_order_today_filter" model="ir.ui.view">
+            <field name="name">sale.order.list.select</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/group" position="inside">
+                    <filter string="Today's Sale Orders"
+                            name="today_sale_order"
+                            domain="[('date_order','&gt;=',context_today().strftime('%Y-%m-%d 00:00:00')),
+                                     ('date_order','&lt;=',context_today().strftime('%Y-%m-%d 23:59:59'))]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_customer_wise_sales" model="ir.actions.act_window">
+            <field name="name">Customer Wise Sales</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">list,form</field>
+            <field name="context">{'group_by': 'partner_id'}</field>
+        </record>
+
     </data>
 </odoo>

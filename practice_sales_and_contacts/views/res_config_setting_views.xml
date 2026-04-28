@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_config_settings_inherit_boolean" model="ir.ui.view">
+        <field name="name">res.config.settings.inherit.boolean</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <group>
+                    <field name="boolean_setting"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

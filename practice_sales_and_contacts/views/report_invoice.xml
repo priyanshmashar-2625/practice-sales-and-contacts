@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_image" inherit_id="account.report_invoice_document">
+        <xpath expr="//th[@name='th_description']" position="after">
+            <th><span>Image</span></th>
+        </xpath>
+
+        <xpath expr="//td[@name='account_invoice_line_name']" position="after">
+            <td>
+                <img t-att-src="image_data_uri(line.product_id.image_1920)" height="77" width="77"/>
+            </td>
+        </xpath>
+    </template>
+</odoo>

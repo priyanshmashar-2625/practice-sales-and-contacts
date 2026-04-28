@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <menuitem id="menu_customer_wise_sales"
+              name="Customer Wise Sales"
+              parent="sale.sale_menu_root"
+              action="action_customer_wise_sales"
+              
+              sequence="10"/>
+</odoo>
